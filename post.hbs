@@ -21,6 +21,14 @@
         {{content}}
     </div>
 
+    {{#prev_post}}
+  		<a href="{{url}}">{{title}}</a>
+  	{{/prev_post}}
+
+  	{{#next_post}}
+  		<a href="{{url}}">{{title}}</a>
+  	{{/next_post}}
+
     {{!-- Email subscribe form at the bottom of the page --}}
     {{#if @labs.subscribers}}
     <section class="subscribe-form">
