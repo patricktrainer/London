@@ -21,14 +21,7 @@
         {{content}}
     </div>
 
-    {{#prev_post}}
-  		<a href="{{url}}">{{title}}</a>
-  	{{/prev_post}}
-
-  	{{#next_post}}
-  		<a href="{{url}}">{{title}}</a>
-  	{{/next_post}}
-
+    
     {{!-- Email subscribe form at the bottom of the page --}}
     {{#if @labs.subscribers}}
     <section class="subscribe-form">
@@ -44,8 +37,16 @@
         If the post has more than one author, we load a specific template
         from includes/byline-multiple.hbs, otherwise, we just use the
         default byline. --}}
+    
+        <div class="kg-bookmark-container">
+            {{#prev_post}}
+                {{>"post-card"}}
+            {{/prev_post}}
 
-
+            {{#next_post}}
+                {{>"post-card"}}
+            {{/next_post}}
+        </div>                 
     </footer>
 
     {{!--
